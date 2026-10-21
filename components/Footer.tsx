@@ -1,0 +1,106 @@
+"use client"
+
+import Link from "next/link"
+import { useEffect, useState } from "react"
+
+const footerGroups = [
+  {
+    title: "فروشگاه",
+    links: [
+      { label: "همه محصولات", href: "/products" },
+      { label: "ساعت مردانه", href: "/categories/men" },
+      { label: "ساعت زنانه", href: "/categories/women" },
+      { label: "برندها", href: "/brands" },
+    ],
+  },
+  {
+    title: "راهنما",
+    links: [
+      { label: "راهنمای خرید", href: "/articles" },
+      { label: "ارسال و تحویل", href: "/shipping" },
+      { label: "سوالات متداول", href: "/faq" },
+      { label: "قوانین و مقررات", href: "/terms" },
+    ],
+  },
+  {
+    title: "واچلند",
+    links: [
+      { label: "درباره ما", href: "/about" },
+      { label: "مجله", href: "/articles" },
+      { label: "تماس با ما", href: "/contact" },
+    ],
+  },
+]
+
+const socialLinks = [
+  { label: "Instagram", href: "#" },
+  { label: "X", href: "#" },
+  { label: "Telegram", href: "#" },
+]
+
+export default function Footer() {
+  const [currentYear, setCurrentYear] = useState(Number)
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear())
+  }, [])
+
+  return (
+    <footer className="w-full bg-neutral-50 dark:bg-neutral-950">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
+        <div className="border-b border-neutral-200 py-16 text-right sm:py-20 dark:border-white/10">
+          <Link
+            href="/"
+            className="text-3xl font-bold tracking-tight text-neutral-950 dark:text-white"
+          >
+            واچلند
+          </Link>
+
+          <p className="mt-4 max-w-md text-sm leading-7 text-neutral-500 dark:text-white/50">
+            مجموعه‌ای منتخب از ساعت‌های اصیل و ماندگار؛ برای کسانی که زمان را با
+            سبک خودشان زندگی می‌کنند.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 border-b border-neutral-200 py-12 sm:grid-cols-3 lg:py-16 dark:border-white/10">
+          {footerGroups.map((group) => (
+            <div key={group.title}>
+              <h3 className="text-sm font-semibold text-neutral-950 dark:text-white">
+                {group.title}
+              </h3>
+
+              <ul className="mt-5 space-y-3">
+                {group.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-neutral-500 transition-colors hover:text-neutral-950 dark:text-white/50 dark:hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col gap-5 py-7 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between dark:text-white/40">
+          <p>تمامی حقوق برای واچلند محفوظ است {currentYear}</p>
+
+          <div className="flex items-center gap-5">
+            {socialLinks.map((social) => (
+              <Link
+                key={social.label}
+                href={social.href}
+                className="transition-colors hover:text-neutral-950 dark:hover:text-white"
+              >
+                {social.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
