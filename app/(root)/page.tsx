@@ -1,18 +1,43 @@
 import { Suspense } from "react"
 
-import ProductList from "@/components/shared/product/ProductList"
-import getLatestProducts from "@/lib/actions/product.action"
+import { BrandsStripWrapper } from "@/components/home/BrandsStripWrapper"
+import CategorySection from "@/components/home/CategorySection"
+import Hero from "@/components/home/Hero"
+import { ArticleSection } from "@/features/articles/components/ArticleSection"
+import { getCartQuantities } from "@/features/cart/queries/get-cart-quantities"
+import { ProductSlider } from "@/features/product/components/ProductSlider"
+import { ProductSliderSkeleton } from "@/features/product/components/ProductSliderSkeleton"
+import getProducts from "@/features/product/queries/get-products"
 
-async function LatestProducts() {
-  const products = await getLatestProducts()
+async function FeaturedProducts() {
+  const [{ products }, { isLoggedIn, quantities }] = await Promise.all([
+    getProducts(),
+    getCartQuantities(),
+  ])
 
-  return <ProductList data={products} limit={4} />
+  return (
+    <ProductSlider
+      products={products}
+      quantities={quantities}
+      isLoggedIn={isLoggedIn}
+    />
+  )
 }
 
 export default function HomePage() {
   return (
-    <Suspense fallback={<p>در حال بارگذاری محصولات...</p>}>
-      <LatestProducts />
-    </Suspense>
+    <>
+      <Hero />
+
+      <BrandsStripWrapper />
+
+      <Suspense fallback={<ProductSliderSkeleton />}>
+        <FeaturedProducts />
+      </Suspense>
+
+      <CategorySection />
+
+      <ArticleSection />
+    </>
   )
 }
