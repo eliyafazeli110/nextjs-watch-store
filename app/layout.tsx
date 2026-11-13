@@ -1,8 +1,9 @@
 import "./globals.css"
 import type { Metadata } from "next"
 
-import { ThemeProvider } from "next-themes"
 import localFont from "next/font/local"
+
+import { Providers } from "@/components/shared/Providers"
 
 export const metadata: Metadata = {
   title: "Nextjs-watch-store",
@@ -15,11 +16,14 @@ const vazirFont = localFont({
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fa" dir="rtl" suppressHydrationWarning>
+    <html
+      lang="fa"
+      dir="rtl"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body className={`${vazirFont.className} antialiased overflow-x-hidden`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          {children}
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.swiper:not(.swiper-initialized) .swiper-wrapper {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+}
+.swiper:not(.swiper-initialized) .swiper-slide {
+  flex: 0 0 calc((100% - 16px) / 1.2);
+}
+@media (min-width: 640px) {
+  .swiper:not(.swiper-initialized) .swiper-slide {
+    flex-basis: calc((100% - 16px) / 2.2);
+  }
+}
+@media (min-width: 768px) {
+  .swiper:not(.swiper-initialized) .swiper-slide {
+    flex-basis: calc((100% - 40px) / 3);
+  }
+}
+@media (min-width: 1024px) {
+  .swiper:not(.swiper-initialized) .swiper-slide {
+    flex-basis: calc((100% - 72px) / 4);
+  }
+}
+
+@theme {
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(50%);
+    }
+  }
+}
+
+:root {
+  --progress-color: #000000;
+  --header-height: 4rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 transparent;
+}
+
+.dark {
+  --progress-color: #ffffff;
+  scrollbar-color: #525252 transparent;
+}

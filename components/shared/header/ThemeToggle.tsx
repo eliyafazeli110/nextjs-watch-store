@@ -1,29 +1,22 @@
 "use client"
 
-import { Button } from "@base-ui/react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
 
-export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+import { cn } from "@/lib/utils"
 
-  useEffect(() => setMounted(true), [])
-
-  if (!mounted) return <div className="size-4.5" />
+export function ThemeToggle({ className }: { className?: string }) {
+  const { resolvedTheme, setTheme } = useTheme()
 
   return (
-    <Button
-      className="md:flex"
+    <button
+      type="button"
       aria-label="تغییر تم"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className={cn(className)}
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
-      {theme === "dark" ? (
-        <Sun className="size-4.5" />
-      ) : (
-        <Moon className="size-4.5" />
-      )}
-    </Button>
+      <Sun className="hidden size-4.5 dark:block" />
+      <Moon className="size-4.5 dark:hidden" />
+    </button>
   )
 }
