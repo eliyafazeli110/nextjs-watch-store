@@ -11,7 +11,7 @@ export default function RootLayout({
     <div className="flex min-h-screen w-full flex-col bg-[#fafafa] text-neutral-900 dark:bg-neutral-950 dark:text-white">
       <Header />
 
-      <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 pt-28 pb-16 sm:px-6 md:pt-16 lg:px-8">
+      <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col px-4 pt-(--header-height) pb-6 sm:px-6 lg:px-8">
         {children}
       </main>
 

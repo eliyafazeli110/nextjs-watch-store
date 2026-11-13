@@ -46,16 +46,16 @@ export default function Footer() {
   }, [])
 
   return (
-    <footer className="w-full bg-neutral-50 dark:bg-neutral-950">
+    <footer className="w-full border-t border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-950">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
-        <div className="grid grid-cols-2 gap-x-8 gap-y-12 border-b border-neutral-200 py-12 sm:grid-cols-3 lg:py-16 dark:border-white/10">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-8 border-b border-neutral-200 py-8 sm:grid-cols-3 lg:py-10 dark:border-white/10">
           {footerGroups.map((group) => (
             <div key={group.title}>
               <h3 className="text-sm font-semibold text-neutral-950 dark:text-white">
                 {group.title}
               </h3>
 
-              <ul className="mt-5 space-y-3">
+              <ul className="mt-4 space-y-2.5">
                 {group.links.map((link) => (
                   <li key={link.href}>
                     <Link
@@ -71,7 +71,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-5 py-7 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between dark:text-white/40">
+        <div className="flex flex-col gap-4 py-5 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between dark:text-white/40">
           <p>تمامی حقوق برای واچلند محفوظ است {currentYear}</p>
 
           <div className="flex items-center gap-5">

@@ -36,7 +36,7 @@ export function ProductSlider({
 
   return (
     <div className="relative w-full group pt-4 pb-2">
-      <h2 className="pb-4 text-3xl font-medium tracking-tight text-neutral-950 sm:text-4xl dark:text-white">
+      <h2 className="py-6 text-3xl font-medium tracking-tight text-neutral-950 sm:text-4xl dark:text-white">
         جدیدترین محصولات
       </h2>
 
@@ -53,7 +53,7 @@ export function ProductSlider({
           768: { slidesPerView: 3, spaceBetween: 20 },
           1024: { slidesPerView: 4, spaceBetween: 24 },
         }}
-        className="pb-4! bg-black"
+        className="pb-4!"
       >
         {products.map((product) => (
           <SwiperSlide key={product.id} className="h-auto">

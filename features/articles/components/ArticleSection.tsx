@@ -11,8 +11,8 @@ export function ArticleSection() {
   return (
     <section className="w-full bg-neutral-50 dark:bg-neutral-950">
       <div className="mx-auto w-full max-w-7xl py-20">
-        <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="mt-4 text-3xl font-medium tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl dark:text-white">
+        <div className="pb-6 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <h2 className="text-3xl font-medium tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl dark:text-white">
             مقالات
           </h2>
 

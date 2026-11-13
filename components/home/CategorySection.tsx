@@ -37,7 +37,7 @@ export default function CategorySection() {
   return (
     <section className="w-full bg-neutral-50 py-20 lg:py-24 dark:bg-neutral-950">
       <div className="mx-auto w-full max-w-7xl ">
-        <h2 className="pb-4 text-3xl font-medium tracking-tight text-neutral-950 sm:text-4xl dark:text-white">
+        <h2 className="pb-6 text-3xl font-medium tracking-tight text-neutral-950 sm:text-4xl dark:text-white">
           دسته بندی ها
         </h2>
 

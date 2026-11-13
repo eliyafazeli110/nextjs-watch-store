@@ -44,6 +44,12 @@
   --header-height: 4rem;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --header-height: 6rem;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

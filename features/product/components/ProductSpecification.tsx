@@ -17,27 +17,24 @@ export function ProductSpecifications({ product }: ProductSpecificationsProps) {
     Boolean(item.value),
   )
 
-  if (specifications.length === 0) {
-    return null
-  }
+  if (specifications.length === 0) return null
 
   return (
-    <section className="border-t border-neutral-200 py-16 dark:border-white/10">
-      <div>
-        <h2 className="mt-4 text-2xl font-medium text-neutral-950 dark:text-white">
-          مشخصات محصول
-        </h2>
+    <section className="w-full">
+      <h2 className="mb-6 text-xl font-bold text-neutral-950 dark:text-white">
+        مشخصات فنی
+      </h2>
 
-        <div className="mt-8 grid grid-cols-1 border-t border-neutral-200 sm:grid-cols-2 dark:border-white/10">
-          {specifications.map((item) => (
+      <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+        <div className="grid grid-cols-1 sm:grid-cols-2">
+          {specifications.map((item, index) => (
             <div
               key={item.label}
-              className="flex items-center justify-between border-b border-neutral-200 py-5 sm:px-4 dark:border-white/10"
+              className="flex items-center justify-between border-b border-neutral-200 px-5 py-4 dark:border-neutral-800 sm:odd:border-l"
             >
-              <span className="text-sm text-neutral-500 dark:text-white/40">
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
                 {item.label}
               </span>
-
               <span className="text-sm font-medium text-neutral-950 dark:text-white">
                 {item.value}
               </span>

@@ -29,7 +29,6 @@ export function UserMenu({ user, className }: UserMenuProps) {
   const [mounted, setMounted] = useState(false)
 
   const menuRef = useRef<HTMLDivElement>(null)
-  const closeTimerRef = useRef<NodeJS.Timeout | null>(null)
 
   const displayName = user.firstName ?? user.name ?? "کاربر واچلند"
   const initial = (user.firstName?.[0] ?? user.email[0]).toUpperCase()
@@ -63,22 +62,8 @@ export function UserMenu({ user, className }: UserMenuProps) {
     return () => document.removeEventListener("keydown", handleEscape)
   }, [])
 
-  const handleMouseEnter = () => {
-    if (closeTimerRef.current) clearTimeout(closeTimerRef.current)
-    setOpen(true)
-  }
-
-  const handleMouseLeave = () => {
-    closeTimerRef.current = setTimeout(() => setOpen(false), 150)
-  }
-
   return (
-    <div
-      ref={menuRef}
-      className="relative"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div ref={menuRef} className="relative">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
