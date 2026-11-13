@@ -1,12 +1,39 @@
 import { prisma } from "@/lib/prisma"
 
 import { products } from "../data/products"
+import { brands } from "./brands"
+import { categories } from "./categories"
 
 async function main() {
-  await prisma.product.deleteMany()
-  await prisma.product.createMany({ data: products })
+  await Promise.all(
+    brands.map((brand) =>
+      prisma.brand.upsert({
+        where: { slug: brand.slug },
+        update: { name: brand.name },
+        create: brand,
+      }),
+    ),
+  )
 
-  console.log("Data added.")
+  await Promise.all(
+    categories.map((category) =>
+      prisma.category.upsert({
+        where: { slug: category.slug },
+        update: { name: category.name },
+        create: category,
+      }),
+    ),
+  )
+
+  await Promise.all(
+    products.map((product) =>
+      prisma.product.upsert({
+        where: { slug: product.slug },
+        update: product,
+        create: product,
+      }),
+    ),
+  )
 }
 
 main()
