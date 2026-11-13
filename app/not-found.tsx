@@ -1,6 +1,7 @@
-import { cn } from "@/lib/utils/cn"
 import { Button } from "@base-ui/react"
 import Link from "next/link"
+
+import { cn } from "@/lib/utils"
 
 export default function NorFoundPage() {
   return (
