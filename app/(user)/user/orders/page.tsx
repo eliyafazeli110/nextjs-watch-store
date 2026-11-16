@@ -23,14 +23,9 @@ async function OrdersContent() {
 export default function OrdersPage() {
   return (
     <div className="flex flex-col gap-6">
-      <div>
-        <h1 className="text-xl font-bold text-neutral-950 dark:text-white">
-          سفارش‌های من
-        </h1>
-        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-          لیست سفارش‌هایی که تاکنون ثبت کرده‌اید
-        </p>
-      </div>
+      <h1 className="text-xl font-bold text-neutral-950 dark:text-white">
+        سفارش‌های من
+      </h1>
 
       <Suspense fallback={<OrderCardSkeleton />}>
         <OrdersContent />
