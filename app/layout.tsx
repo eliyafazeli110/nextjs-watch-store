@@ -6,8 +6,38 @@ import localFont from "next/font/local"
 import { Providers } from "@/components/shared/Providers"
 
 export const metadata: Metadata = {
-  title: "Nextjs-watch-store",
-  description: "A watch e-commerce project built with Next.js",
+  title: {
+    default: "واچ‌لند | فروشگاه آنلاین ساعت",
+    template: "%s | واچ‌لند",
+  },
+  description:
+    "فروشگاه اینترنتی ساعت‌های لوکس و کلاسیک با بهترین کیفیت و قیمت. خرید ساعت مردانه، زنانه و اسپرت با ارسال سریع.",
+  keywords: [
+    "ساعت",
+    "خرید ساعت",
+    "ساعت لوکس",
+    "واچ لند",
+    "فروشگاه ساعت",
+    "watch store",
+  ],
+  authors: [{ name: "ایلیا فاضلی" }],
+  openGraph: {
+    type: "website",
+    locale: "fa_IR",
+    url: "https://nextjs-watch-store-brown.vercel.app",
+    siteName: "واچ‌لند",
+    title: "واچ‌لند | فروشگاه آنلاین ساعت",
+    description:
+      "فروشگاه اینترنتی ساعت‌های لوکس و کلاسیک با بهترین کیفیت و قیمت.",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "واچ‌لند | فروشگاه آنلاین ساعت",
+      },
+    ],
+  },
 }
 
 const vazirFont = localFont({

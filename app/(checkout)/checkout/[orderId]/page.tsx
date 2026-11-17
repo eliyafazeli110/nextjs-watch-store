@@ -5,9 +5,25 @@ import { Suspense } from "react"
 import { PaymentPageSkeleton } from "@/components/ui/skeletons/PaymentPageSkeleton"
 import { PaymentConfirmForm } from "@/features/checkout/components/PaymentConfirmForm"
 import { getOrderById } from "@/features/order/queries/getOrderById"
+import { Metadata } from "next"
 
 interface PaymentPageProps {
   params: Promise<{ orderId: string }>
+}
+
+export async function generateMetadata({
+  params,
+}: PaymentPageProps): Promise<Metadata> {
+  const { orderId } = await params
+
+  return {
+    title: `پرداخت سفارش #${orderId.slice(0, 8)} | واچ‌لند`,
+    description: "صفحه تایید و پرداخت سفارش در فروشگاه واچ‌لند.",
+    robots: {
+      index: false,
+      follow: false,
+    },
+  }
 }
 
 async function PaymentContent({ params }: PaymentPageProps) {

@@ -7,9 +7,25 @@ import { OrderItemsList } from "@/features/order/components/OrderItemList"
 import { OrderPaymentCard } from "@/features/order/components/OrderPaymentCard"
 import { OrderStatusStepper } from "@/features/order/components/OrderStatusStepper"
 import { getOrderById } from "@/features/order/queries/getOrderById"
+import { Metadata } from "next"
 
 interface OrderDetailPageProps {
   params: Promise<{ id: string }>
+}
+
+export async function generateMetadata({
+  params,
+}: OrderDetailPageProps): Promise<Metadata> {
+  const { id } = await params
+
+  return {
+    title: `جزئیات سفارش #${id.slice(0, 8)} | واچ‌لند`,
+    description: "مشاهده جزئیات و وضعیت سفارش در فروشگاه واچ‌لند.",
+    robots: {
+      index: false,
+      follow: false,
+    },
+  }
 }
 
 async function OrderDetailContent({ params }: OrderDetailPageProps) {
