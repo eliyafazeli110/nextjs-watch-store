@@ -20,6 +20,7 @@ The application includes essential e-commerce functionality, from product discov
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Architecture](#architecture)
+- [Testing](#testing)
 - [Getting Started](#getting-started)
 - [Environment Variables](#environment-variables)
 - [Database](#database)
@@ -80,21 +81,23 @@ Its codebase follows a **feature-based architecture**, keeping business logic or
 
 ## Tech Stack
 
-| Category         | Technology              |
-| ---------------- | ----------------------- |
-| Framework        | Next.js 16 (App Router) |
-| UI Library       | React 19                |
-| Language         | TypeScript              |
-| Styling          | Tailwind CSS 4          |
-| Database         | PostgreSQL              |
-| Database Hosting | Neon                    |
-| ORM              | Prisma 7                |
-| Authentication   | Better Auth             |
-| UI Components    | Base UI                 |
-| Form Handling    | React Hook Form         |
-| Validation       | Valibot                 |
-| Package Manager  | pnpm                    |
-| Deployment       | Vercel                  |
+| Category | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| UI Library | React 19 |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4 |
+| Database | PostgreSQL |
+| Database Hosting | Neon |
+| ORM | Prisma 7 |
+| Authentication | Better Auth |
+| UI Components | Base UI |
+| Form Handling | React Hook Form |
+| Validation | Valibot |
+| Testing Framework | Vitest |
+| Component Testing | React Testing Library |
+| Package Manager | pnpm |
+| Deployment | Vercel |
 
 ## Architecture
 
@@ -108,6 +111,19 @@ The project emphasizes the following principles:
 - **Reusable Components:** Building shared components and avoiding unnecessary duplication.
 - **Data Validation:** Validating user input before sensitive server-side operations.
 - **Clean Code:** Prioritizing readability, consistency, and maintainability.
+
+## Testing
+
+Watchland uses **Vitest** and **React Testing Library** to write automated tests and verify application behavior.
+
+The testing approach focuses on:
+
+- **Component Testing:** Testing UI behavior, rendering, and user interactions.
+- **Unit Testing:** Testing individual functions and business logic in isolation.
+- **Mocking Dependencies:** Replacing external dependencies, such as database queries and authentication services, with controlled mock implementations.
+- **Behavior Verification:** Checking expected outputs, function calls, and application behavior across different scenarios.
+
+The goal is to improve code reliability, catch regressions early, and make future changes safer and easier to maintain.
 
 ## Getting Started
 
@@ -171,12 +187,12 @@ Open [http://localhost:3000](http://localhost:3000) to access the application.
 
 The application requires the following environment variables:
 
-| Variable             | Description                                                                                                                  |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `DATABASE_URL`       | Neon pooled PostgreSQL connection string used for application database queries.                                              |
-| `DIRECT_URL`         | Direct PostgreSQL connection string for operations requiring a non-pooled connection, depending on the Prisma configuration. |
-| `BETTER_AUTH_SECRET` | Secure random secret used by Better Auth for authentication-related cryptographic operations.                                |
-| `BETTER_AUTH_URL`    | Base URL of the application used by Better Auth.                                                                             |
+| Variable | Description |
+|---|---|
+| `DATABASE_URL` | Neon pooled PostgreSQL connection string used for application database queries. |
+| `DIRECT_URL` | Direct PostgreSQL connection string for operations requiring a non-pooled connection, depending on the Prisma configuration. |
+| `BETTER_AUTH_SECRET` | Secure random secret used by Better Auth for authentication-related cryptographic operations. |
+| `BETTER_AUTH_URL` | Base URL of the application used by Better Auth. |
 
 ### Example Configuration
 
@@ -253,7 +269,7 @@ watchland/
 - Wishlist functionality.
 - Enhanced user account management.
 - Admin dashboard and product management.
-- Automated testing.
+- Expand automated test coverage with integration and end-to-end tests.
 
 ## Contact
 
