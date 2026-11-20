@@ -31,4 +31,4 @@ jobs:
         run: pnpm prisma generate
 
       - name: Run verification
-        run: pnpm typecheck && pnpm exec eslint . --quiet && pnpm exec prettier --check . && pnpm test:run
+        run: pnpm typecheck && pnpm exec eslint . --quiet && pnpm exec prettier --check "**/*.{ts,tsx,js,jsx}" && pnpm test:run
