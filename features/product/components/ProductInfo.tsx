@@ -1,5 +1,7 @@
-import { Product } from "@/types"
 import { ShieldCheck, Truck } from "lucide-react"
+
+import type { Product } from "@/types"
+
 import { CartButton } from "@/features/cart/components/CartButton"
 
 interface ProductInfoProps {

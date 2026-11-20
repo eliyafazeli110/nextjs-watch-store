@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation"
+
 import { getProductBySlug } from "../queries/get-products-by-slug"
 import { ProductGallery } from "./ProductGallery"
 import { ProductInfo } from "./ProductInfo"

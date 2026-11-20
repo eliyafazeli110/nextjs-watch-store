@@ -81,23 +81,23 @@ Its codebase follows a **feature-based architecture**, keeping business logic or
 
 ## Tech Stack
 
-| Category | Technology |
-|---|---|
-| Framework | Next.js 16 (App Router) |
-| UI Library | React 19 |
-| Language | TypeScript |
-| Styling | Tailwind CSS 4 |
-| Database | PostgreSQL |
-| Database Hosting | Neon |
-| ORM | Prisma 7 |
-| Authentication | Better Auth |
-| UI Components | Base UI |
-| Form Handling | React Hook Form |
-| Validation | Valibot |
-| Testing Framework | Vitest |
-| Component Testing | React Testing Library |
-| Package Manager | pnpm |
-| Deployment | Vercel |
+| Category          | Technology              |
+| ----------------- | ----------------------- |
+| Framework         | Next.js 16 (App Router) |
+| UI Library        | React 19                |
+| Language          | TypeScript              |
+| Styling           | Tailwind CSS 4          |
+| Database          | PostgreSQL              |
+| Database Hosting  | Neon                    |
+| ORM               | Prisma 7                |
+| Authentication    | Better Auth             |
+| UI Components     | Base UI                 |
+| Form Handling     | React Hook Form         |
+| Validation        | Valibot                 |
+| Testing Framework | Vitest                  |
+| Component Testing | React Testing Library   |
+| Package Manager   | pnpm                    |
+| Deployment        | Vercel                  |
 
 ## Architecture
 
@@ -187,12 +187,12 @@ Open [http://localhost:3000](http://localhost:3000) to access the application.
 
 The application requires the following environment variables:
 
-| Variable | Description |
-|---|---|
-| `DATABASE_URL` | Neon pooled PostgreSQL connection string used for application database queries. |
-| `DIRECT_URL` | Direct PostgreSQL connection string for operations requiring a non-pooled connection, depending on the Prisma configuration. |
-| `BETTER_AUTH_SECRET` | Secure random secret used by Better Auth for authentication-related cryptographic operations. |
-| `BETTER_AUTH_URL` | Base URL of the application used by Better Auth. |
+| Variable             | Description                                                                                                                  |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `DATABASE_URL`       | Neon pooled PostgreSQL connection string used for application database queries.                                              |
+| `DIRECT_URL`         | Direct PostgreSQL connection string for operations requiring a non-pooled connection, depending on the Prisma configuration. |
+| `BETTER_AUTH_SECRET` | Secure random secret used by Better Auth for authentication-related cryptographic operations.                                |
+| `BETTER_AUTH_URL`    | Base URL of the application used by Better Auth.                                                                             |
 
 ### Example Configuration
 

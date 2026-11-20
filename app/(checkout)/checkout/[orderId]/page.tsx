@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+
 import { Lock, ShieldCheck } from "lucide-react"
 import { notFound, redirect } from "next/navigation"
 import { Suspense } from "react"
@@ -5,7 +7,6 @@ import { Suspense } from "react"
 import { PaymentPageSkeleton } from "@/components/ui/skeletons/PaymentPageSkeleton"
 import { PaymentConfirmForm } from "@/features/checkout/components/PaymentConfirmForm"
 import { getOrderById } from "@/features/order/queries/getOrderById"
-import { Metadata } from "next"
 
 interface PaymentPageProps {
   params: Promise<{ orderId: string }>

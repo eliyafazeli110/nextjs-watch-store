@@ -3,7 +3,9 @@
 import { Dialog as BaseDialog } from "@base-ui/react/dialog"
 import Image from "next/image"
 import { useState } from "react"
+
 import type { Product } from "@/types"
+
 import { cn } from "@/lib/utils"
 
 interface ProductGalleryProps {

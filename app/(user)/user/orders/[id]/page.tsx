@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+
 import { notFound } from "next/navigation"
 import { Suspense } from "react"
 
@@ -7,7 +9,6 @@ import { OrderItemsList } from "@/features/order/components/OrderItemList"
 import { OrderPaymentCard } from "@/features/order/components/OrderPaymentCard"
 import { OrderStatusStepper } from "@/features/order/components/OrderStatusStepper"
 import { getOrderById } from "@/features/order/queries/getOrderById"
-import { Metadata } from "next"
 
 interface OrderDetailPageProps {
   params: Promise<{ id: string }>

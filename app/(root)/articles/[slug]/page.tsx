@@ -1,9 +1,10 @@
+import type { Metadata } from "next"
+
 import { Suspense } from "react"
 
 import { ArticlePageSkeleton } from "@/components/ui/skeletons/ArticlePageSkeleton"
 import { ArticleDetails } from "@/features/articles/components/ArticleDetails"
 import { getArticleBySlug } from "@/features/articles/data/articles-data"
-import { Metadata } from "next"
 
 interface ArticlePageProps {
   params: Promise<{ slug: string }>
@@ -22,10 +23,10 @@ export async function generateMetadata({
 
   return {
     title: article.title,
-    description: description,
+    description,
     openGraph: {
       title: article.title,
-      description: description,
+      description,
       images: article.image ? [article.image] : [],
     },
   }

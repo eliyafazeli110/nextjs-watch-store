@@ -1,25 +1,25 @@
 import { render, screen, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
-
 import { beforeEach, describe, expect, it, vi } from "vitest"
 
-import { CartButton } from "./CartButton"
 import { toastManager } from "@/lib/utils"
+
 import { addToCartAction } from "../actions/add-to-cart.action"
+import { CartButton } from "./CartButton"
 
 const mockChangeCartCount = vi.fn()
 
-vi.mock("../context/use-cart-count", () => ({
+vi.mock(import("../context/use-cart-count"), () => ({
   useCartCount: () => ({
     changeCartCount: mockChangeCartCount,
   }),
 }))
 
-vi.mock("@/features/cart/actions/add-to-cart.action", () => ({
+vi.mock(import("@/features/cart/actions/add-to-cart.action"), () => ({
   addToCartAction: vi.fn(),
 }))
 
-vi.mock("@/lib/utils", () => ({
+vi.mock(import("@/lib/utils"), () => ({
   toastManager: {
     add: vi.fn(),
   },
@@ -35,6 +35,7 @@ describe("CartButton", () => {
     const button = screen.getByRole("button", {
       name: "ناموجود",
     })
+
     expect(button).toBeDisabled()
   })
 
@@ -43,6 +44,7 @@ describe("CartButton", () => {
       <CartButton productId="1" stock={5} cartQuantity={4} isLoggedIn={true} />,
     )
     const button = screen.getByRole("button", { name: "افزودن به سبد خرید" })
+
     expect(button).toBeEnabled()
   })
 
@@ -58,6 +60,7 @@ describe("CartButton", () => {
     const button = screen.getByRole("button", {
       name: "ناموجود",
     })
+
     expect(button).toBeDisabled()
   })
 
@@ -73,6 +76,7 @@ describe("CartButton", () => {
     const button = screen.getByRole("button", {
       name: "ناموجود",
     })
+
     expect(button).toBeDisabled()
   })
 
