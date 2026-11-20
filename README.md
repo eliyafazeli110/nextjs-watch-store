@@ -187,12 +187,12 @@ Open [http://localhost:3000](http://localhost:3000) to access the application.
 
 The application requires the following environment variables:
 
-| Variable             | Description                                                                                                                  |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `DATABASE_URL`       | Neon pooled PostgreSQL connection string used for application database queries.                                              |
-| `DIRECT_URL`         | Direct PostgreSQL connection string for operations requiring a non-pooled connection, depending on the Prisma configuration. |
-| `BETTER_AUTH_SECRET` | Secure random secret used by Better Auth for authentication-related cryptographic operations.                                |
-| `BETTER_AUTH_URL`    | Base URL of the application used by Better Auth.                                                                             |
+| Variable | Description |
+|---|---|
+| `DATABASE_URL` | Neon pooled PostgreSQL connection string used for application database queries. |
+| `DIRECT_URL` | Direct PostgreSQL connection string for operations requiring a non-pooled connection, depending on the Prisma configuration. |
+| `BETTER_AUTH_SECRET` | Secure random secret used by Better Auth for authentication-related cryptographic operations. |
+| `BETTER_AUTH_URL` | Base URL of the application used by Better Auth. |
 
 ### Example Configuration
 
