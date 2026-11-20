@@ -12,6 +12,7 @@ const mockChangeCartCount = vi.fn()
 vi.mock(import("../context/use-cart-count"), () => ({
   useCartCount: () => ({
     changeCartCount: mockChangeCartCount,
+    pendingDelta: 0,
   }),
 }))
 
@@ -22,7 +23,7 @@ vi.mock(import("@/features/cart/actions/add-to-cart.action"), () => ({
 vi.mock(import("@/lib/utils"), () => ({
   toastManager: {
     add: vi.fn(),
-  },
+  } as unknown as typeof import("@/lib/utils").toastManager,
 }))
 
 describe("CartButton", () => {
