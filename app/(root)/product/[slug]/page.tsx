@@ -1,8 +1,9 @@
+import type { Metadata } from "next"
+
 import { Suspense } from "react"
 
 import { ProductDetailsSkeleton } from "@/components/ui/skeletons/ProductDetailsSkeleton"
 import { ProductDetails } from "@/features/product/components/ProductDetails"
-import { Metadata } from "next"
 import { getProductBySlug } from "@/features/product/queries/get-products-by-slug"
 
 interface ProductPageProps {
@@ -30,10 +31,10 @@ export async function generateMetadata({
 
   return {
     title: `${product.name} | واچ‌لند`,
-    description: description,
+    description,
     openGraph: {
       title: product.name,
-      description: description,
+      description,
       images: product.images.length > 0 ? [product.images[0]] : [],
     },
   }

@@ -81,23 +81,23 @@ Its codebase follows a **feature-based architecture**, keeping business logic or
 
 ## Tech Stack
 
-| Category | Technology |
-|---|---|
-| Framework | Next.js 16 (App Router) |
-| UI Library | React 19 |
-| Language | TypeScript |
-| Styling | Tailwind CSS 4 |
-| Database | PostgreSQL |
-| Database Hosting | Neon |
-| ORM | Prisma 7 |
-| Authentication | Better Auth |
-| UI Components | Base UI |
-| Form Handling | React Hook Form |
-| Validation | Valibot |
-| Testing Framework | Vitest |
-| Component Testing | React Testing Library |
-| Package Manager | pnpm |
-| Deployment | Vercel |
+| Category          | Technology              |
+| ----------------- | ----------------------- |
+| Framework         | Next.js 16 (App Router) |
+| UI Library        | React 19                |
+| Language          | TypeScript              |
+| Styling           | Tailwind CSS 4          |
+| Database          | PostgreSQL              |
+| Database Hosting  | Neon                    |
+| ORM               | Prisma 7                |
+| Authentication    | Better Auth             |
+| UI Components     | Base UI                 |
+| Form Handling     | React Hook Form         |
+| Validation        | Valibot                 |
+| Testing Framework | Vitest                  |
+| Component Testing | React Testing Library   |
+| Package Manager   | pnpm                    |
+| Deployment        | Vercel                  |
 
 ## Architecture
 

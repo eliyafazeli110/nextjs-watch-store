@@ -1,6 +1,7 @@
 "use client"
 
 import type { CartData } from "../queries/get-cart"
+
 import { useCart } from "../hooks/use-cart"
 import CartItemCard from "./CartItemCard"
 import CartSummary from "./CartSummary"

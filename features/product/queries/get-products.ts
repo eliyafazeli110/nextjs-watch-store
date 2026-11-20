@@ -1,9 +1,9 @@
 import "server-only"
 
 import type { Prisma } from "@/generated/prisma/client"
+import type { Product } from "@/types"
 
 import { prisma } from "@/lib/prisma"
-import { Product } from "@/types"
 
 interface GetProductsParams {
   brands?: string[]
